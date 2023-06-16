@@ -1,0 +1,48 @@
+Projectile Pathtrace towards enemies
+Sound effects for buttons
+Mod menu (enable/disable mods to deep merge) and reordering, also if mod is invalid, show and unless clicked ignore dont load
+*Level Selector Screen
+XP/level system stored with GamehubAPI
+*levellocks for selector screen
+Projectiles in its own field then being under enemy.projectile:<projectile> and a projectile having a speed etc
+Particles when die/place etc
+Some fx when gameover animation/cutscene or shake/Particles
+*Shooting image for characters
+Hurt/Damaged image for enemies
+Animations for characters/enemies
+Modifier system (apply)
+Rounds system
+Towers upgrade, summonOnDeath but summonUpOnGrade
+*buttom not colorchange when tileOcupied
+*HP under 0 not red cuz hp < half overwrote it
+Option to chache compressedComplexTrack: {"directTrack"[], "complexTrack":[]}
+options UI
+levelEditor/dataEditor UI changing with optionsUI_dynamicRender
+scoreboard menu
+Make objects instances of classes
+Badges on username in scoreboard
+
+projectiles with target movement
+- closest
+- random
+- selected
+- parabola/boomerang
+
+Projectiles with target action:
+- newTarget
+- spawnEnemy
+- spawnProjectile
+- delayRemove
+- remove
+
+Enemy move type:
+- parabola/curve
+
+Projectile type:
+- LASER
+
+
+load yaml mods
+permanent towers (from gameStart)
+tiles where only said tower is allowed
+assets/props with posibile hitbox and placable overwrite

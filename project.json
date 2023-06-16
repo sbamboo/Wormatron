@@ -1,0 +1,30 @@
+{
+    "Meta": {
+        "Name": "Wormatron",
+        "Description": "Frogs unite",
+        "Version": "0.1",
+        "Tags": ["Dev","MinViaProduct"],
+        "ReadMe": "Readme.md"
+    },
+
+    "Attrib": {
+        "Author": "Simon Kalmi Claesson",
+        "Credits": {
+            "Textures":
+                { "Author":"", "Applies": [] }
+        }
+    },
+
+    "BuildTools":{
+        "PyVersion":"3.10.10",
+        "Packages": {
+            "tkinter": {"Version":"0.1.0", "Type":"None"}
+        }
+    },
+
+    "Wrapper":{
+        "Author": "Simon Kalmi Claesson",
+        "Version": "1.0",
+        "Description": "Wrapper for crosshell to handle tracebacks and dirErrors"
+    }
+}

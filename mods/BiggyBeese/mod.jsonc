@@ -1,0 +1,21 @@
+{
+    "ModData": { 
+        "Author": "Lucas",
+        "Version": "1.0",
+        "REQGameVersion": "None",
+        "FormatVersion": "1"
+    },
+    "Enemies": {
+		"Biggy Beese": {
+		    "Description": "A fat creature with stinky teeth.",
+		     "Texture": "%BiggyBeese%\\bb_71px.png",
+			 "MovementType": "Smooth", //'Smooth' or 'Direct', direct being tp tile to tile and smooth being movement
+			 "CoordsPerMove": 0.5, // Only applied to smooth movement
+			 "Health":20, // Damage taken til death
+			 "Worth":20,
+			 "AdditionalDamage":2, // Damage made to player health additional to current HP of enemy
+			  //"SummonOnDeath": ["Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat","Rat"]
+			  "SummonOnDeath": []
+		}
+    }
+}

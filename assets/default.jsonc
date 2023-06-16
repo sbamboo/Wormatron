@@ -1,0 +1,211 @@
+{
+	"HeldSettings": { // THESE ARE LOADED BEFORE MODS, SO ONLY %source% PATHTAG!
+		"uiCanvasSize": [1000,500],
+		"windowBackground": {
+			"color":"black", // Background color for window
+			"image": {
+				"enabled":"True", // If disabled background will just be the color
+				"file":"%source%\\ui\\window_background.png", //Source: https://www.swtexture.com/2021/04/castle-wall-02.html
+				"useAverageColor": "True", // Takes the averageColor apon load and uses that as backgroundColor, may increse loadingtime
+				"updateRateMS": 60 // Lowervalues are smoother but more laggy
+			}
+		},
+		"mainMenuBackground": "%source%\\ui\\mainmenu_background.png",
+		"windowHiddenByDef":"False",
+		"easterEggFX":"True",
+		"skipStartVid":"True"
+	},
+	"Settings": {
+		"Scoreboard":"True", // Turn off to disable the scoreboard system, this will mean you have ONE offline save :)
+		"OfflineMode":"False", // Disables are network tries and uses localmode without showing offlineNotices, Note! Will still sync when online is turned-on
+		"GamehubAPIConfFile":"%source%\\api.sconf", // The API config file
+		"BackgroundMusic": "True",
+		"LevelSelectSystem": "UI", // 'Fallback' or 'UI'
+		"Keybinds": {
+			"exit": "<KeyPress-q>",
+			"start": "<KeyPress-space>",
+			"click": "<Button-1>"
+		}
+	},
+	"Modifiers":{
+		"Difficulty": { // levels and factors
+			"1": { "CharDmg":1,"CharCost":1,"EnemHealth":1,"EnemSpeed":1,"EnemWorth":1 }
+		}
+	},
+	"Maps": {
+		"Grasslands": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\grasslands\\icon.png",
+				"desc": "The first settlement in our journey!",
+				"lockedByDefault": "False",
+				"unlock": "lvl.0" // lvl.<int> or xp.<int>
+			},
+			"WindowSize": [500,500],
+			"HotbarHeight": 100,
+			"SplashImage": "%source%\\maps\\grasslands\\splash.png",
+			"HotbarBackground": "%source%\\maps\\grasslands\\hb_background.png",
+			"VictoryImage": "%source%\\maps\\grasslands\\victory.png",
+			"GameoverImage": "%source%\\maps\\grasslands\\gameover.png",
+			"AllowSell": "True",
+			"SellbackFactor": 0.75,
+			"GridSize":   [7,7],
+			"GridColor": "black",
+			"BackgroundColor": "blue",
+			"Background": "%source%\\maps\\grasslands\\background.png",
+			"PlayerStartHealth": 100,
+			"PlayerStartMoney": 15,
+			"EnemySpawnCooldown": 100,
+			"EnemySpawnRateDecrese": 10,
+			"EnemySpawnRateCooldown": 100,
+			"ProjectileSpawnCooldown": 50,
+			"moveEnemiesCooldown": 50,
+			"EnemyTrack": ["0|3","1|3","2|3","2|2","2|1","3|1","4|1","5|1","5|2","5|3","5|4","4|4","4|5","3|5","2|5","1|5","0|5"],
+			"HomeBase":  {"Tile":"0|5", "Texture":"%source%\\maps\\grasslands\\homebase_71px.png"},
+			"EnemyBase": {"Tile":"0|3", "Texture":"%source%\\maps\\grasslands\\enemybase_71px.png"},
+			"Difficulty": 1,
+			"SelectableCharacters": {"Frog":"True","GreenWorm":"True"},
+			"SpawnableEnemies":     {"Fly":"True","Rat":"True"},
+			"EnemiesToSpawn": 22,
+			"BackgroundSound": "%source%\\sounds\\wormatronT1.wav",
+			"VictorySound": "%source%\\sounds\\victory.wav",
+			"GameoverSound": "%source%\\sounds\\gameover.wav",
+			"CollisionType": "Exact", // 'Exact' or 'Guess'
+			"xp": {
+				"base": 100,   // baseXp (if no damage taken, get this amnt of XP)
+				"dmgFactor": 1 // baseXp - totalDamageTaken*dmgFactor
+			},
+			"MapOnlyModifiers": {
+				"Difficulty": {
+					"Overwrite":"False",
+					"1":{}
+				}
+			}
+		},
+		"Gravel Hills": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\gravelhills\\icon.png",
+				"desc": "Harder then our last challenge\nbut more hills to camp at.",
+				"lockedByDefault": "False",
+				"unlock": "comming-soon" // lvl.<int> or xp.<int> or never or comming-soon or msg:<str>
+			},
+			"Difficulty": 1
+		},
+		"Sandy Dunes": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\sandydunes\\icon.png",
+				"desc": "Your gonna get sand in your shoes...",
+				"lockedByDefault": "False",
+				"unlock": "comming-soon" // lvl.<int> or xp.<int> or never or comming-soon or msg:<str>
+			},
+			"Difficulty": 1
+		},
+		"First Castle": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\firstcastle\\icon.png",
+				"desc": "An enemy castle, beat it to progress!",
+				"lockedByDefault": "False",
+				"unlock": "comming-soon" // lvl.<int> or xp.<int> or never or comming-soon or msg:<str>
+			},
+			"Difficulty": 2
+		},
+		"River Run": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\gravelhills\\icon.png",
+				"desc": "Harder then our last challenge\nbut more hills to camp at.",
+				"lockedByDefault": "False",
+				"unlock": "comming-soon" // lvl.<int> or xp.<int> or never or comming-soon or msg:<str>
+			},
+			"Difficulty": 2
+		},
+		"Jungle valley": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\gravelhills\\icon.png",
+				"desc": "Harder then our last challenge\nbut more hills to camp at.",
+				"lockedByDefault": "False",
+				"unlock": "comming-soon" // lvl.<int> or xp.<int> or never or comming-soon or msg:<str>
+			},
+			"Difficulty": 2
+		},
+		"Mossy Peeks": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\gravelhills\\icon.png",
+				"desc": "Harder then our last challenge\nbut more hills to camp at.",
+				"lockedByDefault": "False",
+				"unlock": "comming-soon" // lvl.<int> or xp.<int> or never or comming-soon or msg:<str>
+			},
+			"Difficulty": 2
+		},
+		"Second Castle": {
+			"levelSelect": {
+				"edge": "%source%\\ui\\default_edge.png",
+				"icon": "%source%\\maps\\gravelhills\\icon.png",
+				"desc": "Harder then our last challenge\nbut more hills to camp at.",
+				"lockedByDefault": "False",
+				"unlock": "comming-soon" // lvl.<int> or xp.<int> or never or comming-soon or msg:<str>
+			},
+			"Difficulty": 2
+		}
+	},
+	"Characters": {
+		"Frog": {
+		    "Description": "A humble frog, eager to save the world!",
+		    "Textures": {
+				"idle":       "%source%\\chars\\frog_71px.png",
+				"shooting":   "%source%\\chars\\frog_shooting_71px.png",
+				"projectile": "%source%\\chars\\frog_projectile_25px.png"
+		    },
+		    "Damage":2, // per projectile
+		    "Cost":5,   // coins
+		    "ShootingDirection": {"Up":"True"},
+			"ShootingTextureResetTime": 100,
+			"ProjectileSpeed": 3,
+			"ShootingCooldown": 1,
+			"MissChanceProcent": 0 // 0 to disable, EXPERIMENTAL
+		},
+		"GreenWorm": {
+		    "Description": "A green worm ready for action!",
+		    "Textures": {
+				"idle":       "%source%\\chars\\greenworm_71px.png",
+				"shooting":   "%source%\\chars\\greenworm_shooting_71px.png",
+				"projectile": "%source%\\chars\\greenworm_projectile_25px.png"
+		    },
+		    "Damage":4, // per projectile
+		    "Cost":10,  // coins
+		    "ShootingDirection": {"Down":"True"},
+			"ShootingTextureResetTime": 100,
+			"ProjectileSpeed": 3,
+			"ShootingCooldown": 1,
+			"MissChanceProcent": 0 // 0 to disable, EXPERIMENTAL
+		}
+	},
+	"Enemies": {
+		"Fly": {
+		    "Description": "A flying insect or a sneaky enemy.",
+		    "Texture": "%source%\\enemies\\fly_71px.png",
+			"MovementType": "Smooth", //'Smooth' or 'Direct', direct being tp tile to tile and smooth being movement
+			"CoordsPerMove": 0.5, // Only applied to smooth movement
+		    "Health":5, // Damage taken til death
+			"Worth":10,
+			"AdditionalDamage":0, // Damage made to player health additional to current HP of enemy
+			"SummonOnDeath": []
+		},
+		"Rat": {
+		    "Description": "A fast-running creature with sharp teeth.",
+		     "Texture": "%source%\\enemies\\rat_71px.png",
+			 "MovementType": "Smooth", //'Smooth' or 'Direct', direct being tp tile to tile and smooth being movement
+			 "CoordsPerMove": 0.5, // Only applied to smooth movement
+			 "Health":10, // Damage taken til death
+			 "Worth":14,
+			 "AdditionalDamage":2, // Damage made to player health additional to current HP of enemy
+			 "SummonOnDeath": []
+		}
+	},
+	"LoadedMods":[]
+}
