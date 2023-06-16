@@ -8,9 +8,13 @@ import webbrowser
 
 # [Options]
 def scene_sync(csStore):
-    def open_link(event):
+    def open_link_TOS(event):
         nonlocal csStore
         GHTOS = json.loads(open(f"{csStore['GAME_PARENTPATH']}\\assets\\libs\\GamehubAPI\\API.json").read())["License"]
+        webbrowser.open(GHTOS)
+    def open_link_license(event):
+        nonlocal csStore
+        GHTOS = csStore['URL_LICENSE']
         webbrowser.open(GHTOS)
     # Get Canvas and Window
     current_scene = csStore["current_scene"]
@@ -39,9 +43,11 @@ def scene_sync(csStore):
     button_window = canvas.create_window(current_scene["width"]/2-40, 120, window=button)
     btn_exit_obj = tk.Button(window, text="Exit", command=lambda:clickStates.toggle("exit"),font=('Consolas',15),fg="red")
     btn_exit = canvas.create_window(current_scene["width"]/2+40, 120, window=btn_exit_obj)
-    disclaimer = canvas.create_text(current_scene["width"]/2,180,fill="red",text="By pressing sync, you agree to the license agreement for wormatron,\naswell as the\nRemember that you are only allowed to have one account on gamehub's official servers! (so check your name)\nTo not use GamehubAPI, disable scoreboard in settings or use your own api.conf file!")
+    disclaimer = canvas.create_text(current_scene["width"]/2,180,fill="red",text="By pressing sync, you agree to the\naswell as the\nRemember that you are only allowed to have one account on gamehub's official servers! (so check your name)\nTo not use GamehubAPI, disable scoreboard in settings or use your own api.conf file!")
     TosLink = canvas.create_text((current_scene["width"]/2)-220,180-8, fill="Tomato",text="TOS for gamehubAPI.",anchor=tk.W)
-    canvas.tag_bind(TosLink,"<Button-1>",open_link)
+    canvas.tag_bind(TosLink,"<Button-1>",open_link_TOS)
+    LicenseLink = canvas.create_text((current_scene["width"]/2)-108,180-23, fill="Tomato",text="license agreement for wormatron,",anchor=tk.W)
+    canvas.tag_bind(LicenseLink,"<Button-1>",open_link_license)
     # No internet info
     if csStore["hasInternet"] == False:
         x,y = 5,current_scene["height"]-5

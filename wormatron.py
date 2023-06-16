@@ -63,7 +63,7 @@ GAME_PARENTPATH = os.path.dirname( inspect.getabsfile(inspect.currentframe()) )
 PATH_DEFAULTDATAFILE = f"{GAME_PARENTPATH}{os.sep}assets{os.sep}default.jsonc"
 PATH_MODFOLDER = f"{GAME_PARENTPATH}{os.sep}mods"
 PATH_LOCALDATAFILE = f"{GAME_PARENTPATH}{os.sep}assets{os.sep}local.data"
-URL_LICENSE = "https://raw.githubusercontent.com/sbamboo/Gamehub/main/API/v2/tos.txt"
+URL_LICENSE = "https://raw.githubusercontent.com/sbamboo/Wormatron/main/License"
 
 # Debug file
 if cli_arguments.get("debug") == True:
@@ -88,7 +88,8 @@ csStore.update(
         "GAME_PARENTPATH": GAME_PARENTPATH,
         "PATH_DEFAULTDATAFILE": PATH_DEFAULTDATAFILE,
         "PATH_MODFOLDER": PATH_MODFOLDER,
-        "PATH_LOCALDATAFILE": PATH_LOCALDATAFILE
+        "PATH_LOCALDATAFILE": PATH_LOCALDATAFILE,
+        "URL_LICENSE": URL_LICENSE
     }
 )
 # Save cliArguments
