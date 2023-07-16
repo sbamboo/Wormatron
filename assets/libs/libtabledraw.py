@@ -1,4 +1,4 @@
-# Tabledraw: Librariy made by Simon Kalmi Claesson
+# Tabledraw: Library made by Simon Kalmi Claesson
 
 def prepANSI(string):
     ANSI_PREFIX = "\033["
