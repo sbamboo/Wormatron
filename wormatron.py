@@ -192,6 +192,9 @@ csStore["scoreboard_apiConf"] = pathtag(csStore["pathtags"],csStore["game_Data"]
 if csStore["scoreboardEnabled"] == True:
     from assets.libs.GamehubAPI import quickuseAPI
     csStore["scoreboardConnector"] = quickuseAPI.apiConfigScoreboardConnector(apiConfPath=csStore["scoreboard_apiConf"])
+    # Ensure scoreboard exists
+    if csStore["scoreboardConnector"].doesExist("wormatron") != True:
+        csStore["scoreboardConnector"].create("wormatron",{})
 
 # Asign soundSys
 csStore["soundSys"] = SoundMap(csStore)
