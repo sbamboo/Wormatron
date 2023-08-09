@@ -1,8 +1,10 @@
-managerFormat = [3, "https://sbamboo.github.io/websa/Gamehub/API/v2/docs/managers/format3.html",[2]]
+managerFormat = [3, "https://sbamboo.github.io/websa/docview/?markdown=https://raw.githubusercontent.com/sbamboo/Gamehub/main/API/v2/docs/managers/format3.md&css=https://raw.githubusercontent.com/sbamboo/Gamehub/main/API/v2/docs/managers/docs.css&json=https://raw.githubusercontent.com/sbamboo/Gamehub/main/API/v2/docs/docview_files.json",[2]]
 
 
 import importlib.util
+import os
 def fromPath(path):
+    path = path.replace("\\",os.sep)
     spec = importlib.util.spec_from_file_location("module", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -35,22 +37,22 @@ class Manager():
             return scoreboard in basketNames
         else: return True
     # Creates a basket if it dosen't exists
-    def create(self,key,scoreboard=str(),json=None,doCheck=None):
+    def create(self,key,scoreboard=str(),jsonDict=None,doCheck=None):
         if doCheck == None: doCheck = self.doCheck_umb
         doesExist = self.doesExist(key,scoreboard=scoreboard,doCheck=doCheck)
         if doesExist != True:
-            if json != None:
-                ans = self.api(key, "POST", basket=scoreboard, body=json)
+            if jsonDict != None:
+                ans = self.api(key, "POST", basket=scoreboard, body=jsonDict)
             else:
                 ans = self.api(key, "POST", basket=scoreboard)
             return self.safeCast(ans)
     # Replaces a basket if it exists
-    def replace(self,key,scoreboard=str(),json=None,doCheck=None):
+    def replace(self,key,scoreboard=str(),jsonDict=None,doCheck=None):
         if doCheck == None: doCheck = self.doCheck_umb
         doesExist = self.doesExist(key,scoreboard=scoreboard,doCheck=doCheck)
         if doesExist == True:
-            if json != None:
-                ans = self.api(key, "POST", basket=scoreboard, body=json)
+            if jsonDict != None:
+                ans = self.api(key, "POST", basket=scoreboard, body=jsonDict)
             else:
                 ans = self.api(key, "POST", basket=scoreboard)
             return self.safeCast(ans)

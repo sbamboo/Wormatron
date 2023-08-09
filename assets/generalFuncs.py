@@ -494,8 +494,8 @@ def updateLocalData(csStore,file,newData=dict()):
     if exi == True:
         rawContent_enc = open(file,'r').read()
         _LocalDataKey = GenerateKey(calculate_sha256(f"{csStore['GAME_PARENTPATH']}\\wormatron.py"))
-        #rawContent = encdec(key=_LocalDataKey,mode="dec",inputs=rawContent_enc)
-        rawContent = decryptHashLockAuto(rawContent_enc,_LocalDataKey,csStore)
+        rawContent = encdec(key=_LocalDataKey,mode="dec",inputs=rawContent_enc)
+        #rawContent = decryptHashLockAuto(rawContent_enc,_LocalDataKey,csStore)
         try:
             content = json.loads(rawContent)
         except:

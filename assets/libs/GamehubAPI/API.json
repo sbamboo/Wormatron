@@ -1,12 +1,12 @@
 {
-    "Name": "GamehubAPI 2.3 (ALPHA)",
+    "Name": "GamehubAPI 2.6 (ALPHA)",
     "Desc": "New gamehubAPI, looking for a better way to handle scoreboads aswell as allowing backwards compatability with older versions of the API",
     "Version": {
         "Major": "2",
-        "Minor": "3",
-        "Vid": "4",
-        "ReleaseDate": "2023-06-16",
-        "ChangelogNote": "Added 'ChangelogNote' to API.json and added comment support to apiConf files"
+        "Minor": "6",
+        "Vid": "7",
+        "ReleaseDate": "2023-08-09",
+        "ChangelogNote": "Added backupService-ping filtering for scoreboard data."
     },
     "License": "https://raw.githubusercontent.com/sbamboo/Gamehub/main/API/v2/tos.txt",
     "Platform": "Crossplatform-PYTHON3"

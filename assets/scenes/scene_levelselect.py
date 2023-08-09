@@ -14,7 +14,8 @@ def scene_levelSelect(csStore):
             # Calculate Y base Coords
             baseY = cSize[1]/2 - oSize[1]/2
             # moveFactor should be adjusted 0.5 per row, but we want to start 3 steps back from 1 so 1-(0.5*3) = -0.5, this excludes footer/header +1. Then we add 0.5 per row
-            moveFactor = -0.5 + 0.5*len(rows)
+            adj = 0.5
+            moveFactor = -adj + adj*len(rows)
             topY = baseY - ((oSize[1]+vPad)*((len(rows)-1)/2))/moveFactor
             curY = topY + (oSize[1]+vPad)*rIndex
             # Calculate startingY

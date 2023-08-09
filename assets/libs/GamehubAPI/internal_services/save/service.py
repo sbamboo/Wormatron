@@ -8,6 +8,7 @@ import json,os,platform,sys,importlib.util,argparse
 
 # [Importa function]
 def fromPath(path):
+    path = path.replace("\\",os.sep)
     spec = importlib.util.spec_from_file_location("module", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)

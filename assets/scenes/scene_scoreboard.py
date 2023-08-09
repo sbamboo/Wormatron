@@ -129,7 +129,12 @@ def scene_scoreboard(csStore):
                 badge_label.grid(row=0, column=i, padx=2)
         # XP label
         if details.get("xp") != None:
-            xp_label = tk.Label(scoreboard_content_frame, text=f"XP: {details['xp']}, Level: {details['level']}", font=("Consolas", 15))
+            xp_label_text = f"XP: {details['xp']}, Level: {details['level']}"
+            # Code for tabIn text if length to great
+            pixel_charsInFrame = len(xp_label_text)*15
+            if pixel_charsInFrame > 700:
+                xp_label_text = f"XP: {details['xp']},\n Level: {details['level']}"
+            xp_label = tk.Label(scoreboard_content_frame, text=xp_label_text, font=("Consolas", 15))
             xp_label.grid(row=index, column=2, sticky="w")
 
 
