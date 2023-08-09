@@ -2,7 +2,7 @@ Projectile Pathtrace towards enemies
 Sound effects for buttons
 Mod menu (enable/disable mods to deep merge) and reordering, also if mod is invalid, show and unless clicked ignore dont load
 *Level Selector Screen
-XP/level system stored with GamehubAPI
+*XP/level system stored with GamehubAPI
 *levellocks for selector screen
 Projectiles in its own field then being under enemy.projectile:<projectile> and a projectile having a speed etc
 Particles when die/place etc

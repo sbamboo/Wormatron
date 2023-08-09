@@ -573,6 +573,24 @@ def removeUser(csStore,username):
             serverData.pop(username)
             csStore["scoreboardConnector"].replace("wormatron",encryptServer(serverData))
 
+def renameUser(csStore,oldUsername,newUsername):
+    # Local user
+    localData = getLocalData(csStore,csStore["PATH_LOCALDATAFILE"])
+    if localData.get(oldUsername) != None:
+        localData[newUsername] = localData.get(oldUsername)
+        localData.pop(oldUsername)
+        os.remove(csStore["PATH_LOCALDATAFILE"])
+        updateLocalData(csStore,csStore["PATH_LOCALDATAFILE"],newData=localData)
+    # Server user
+    if csStore["hasInternet"] != False:
+        serverData = csStore["scoreboardConnector"].get("wormatron")
+        serverData = decryptServer(serverData)
+        userExistsOnServer = False if (serverData.get(oldUsername) == None) else True
+        if userExistsOnServer == True:
+            serverData[newUsername] = serverData.get(oldUsername)
+            serverData.pop(oldUsername)
+            csStore["scoreboardConnector"].replace("wormatron",encryptServer(serverData))
+
 def gainBadge(csStore,badgeId):
     username = csStore["player_username"]
     if csStore["hasInternet"] != False:

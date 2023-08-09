@@ -2,7 +2,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 from assets.sceneSystem import *
-from assets.generalFuncs import clickStateStorage, actDebugCon, removeUser, decryptServer
+from assets.generalFuncs import clickStateStorage, actDebugCon, removeUser, decryptServer, renameUser
 import json,base64,io,requests
 
 def get_lowest_object_position(event):
@@ -73,15 +73,24 @@ def scene_scoreboard(csStore):
     accr_button_window = canvas.create_window(5,y-20,anchor=tk.W, window=accr_button)
 
     # Define accountSignout
-    accs_title = canvas.create_text(5,y-95,anchor=tk.W,text="Sign out",font=("Consolas",10))
+    accs_title = canvas.create_text(5,y-95,anchor=tk.W,text="Sign out:",font=("Consolas",10))
     accs_button = tk.Button(window, text="Signout", command=lambda:clickStates.toggle("signoutAccount"),font=("Consolas",10))
     accs_button_window = canvas.create_window(5,y-70,anchor=tk.W, window=accs_button)
+
+    # Define accountRename
+    accn_title = canvas.create_text(280,y-45,anchor=tk.W,text="Rename Account:",font=("Consolas",10))
+    accn_name_stringVar = tk.StringVar()
+    accn_name = tk.Entry(window,font=("Consolas",10),fg="Black",bg="White",insertbackground="black",textvariable=accn_name_stringVar)
+    accn_name.insert(0,csStore["player_username"])
+    accn_name_window = canvas.create_window(280,y-20,anchor=tk.W, window=accn_name)
+    accn_button = tk.Button(window, text="Rename", command=lambda:clickStates.toggle("renameAccount"),font=("Consolas",10))
+    accn_button_window = canvas.create_window(430,y-20,anchor=tk.W, window=accn_button)
 
     # Define signed in as
     offset = 46
     canvas.create_rectangle(0+offset,0,270+offset,30,fill="lightblue")
     canvas.create_text(5+offset,5, anchor=tk.NW, text=f"Signed in as: ",font=("Consolas", 12),fill="Black")
-    canvas.create_text(130+offset,5, anchor=tk.NW, text=csStore['player_username'],font=("Consolas", 12),fill="Orange")
+    signedInAs = canvas.create_text(130+offset,5, anchor=tk.NW, text=csStore['player_username'],font=("Consolas", 12),fill="Orange")
 
     # Define functions
     def show_text(event):
@@ -94,14 +103,17 @@ def scene_scoreboard(csStore):
     def hide_text(event):
         text_label.place_forget()
 
+    # Init list of names
+    names = {}
+
     # Add elements to the scoreboard
     for index, (name, details) in enumerate(_scoreboard.items()):
         # Name Label
         if details.get("xp") != None: 
-            label_name = tk.Label(scoreboard_content_frame, text=f"{name}:", font=("Consolas", 15))
+            names[name] = tk.Label(scoreboard_content_frame, text=f"{name}:", font=("Consolas", 15))
         else:
-            label_name = tk.Label(scoreboard_content_frame, text=f"{name}", font=("Consolas", 15), fg="red")
-        label_name.grid(row=index, column=0, sticky="w")
+            names[name] = tk.Label(scoreboard_content_frame, text=f"{name}", font=("Consolas", 15), fg="red")
+        names[name].grid(row=index, column=0, sticky="w")
 
         # Add badge item
         badges_frame = tk.Frame(scoreboard_content_frame)
@@ -154,6 +166,19 @@ def scene_scoreboard(csStore):
         elif clickStates.get("signoutAccount") == True:
             csStore["cliArguments"]["usr"] = None
             switchAndRun(csStore, "scene_sync")
+        elif clickStates.get("renameAccount") == True:
+            oldUsername = csStore["player_username"]
+            newUsername = str(accn_name_stringVar.get())
+            if newUsername != None and newUsername != "" and newUsername != oldUsername:
+                renameUser(csStore, oldUsername, newUsername)
+                csStore["player_username"] = newUsername
+                accn_button.config(state="disabled")
+                canvas.itemconfig(signedInAs,text=newUsername)
+                names[oldUsername].config(text=newUsername)
+                canvas.itemconfig(accn_title,text="Rename Account: Reload page to rename again!")
+                accn_name.config(state="disabled")
+                clickStates.set("renameAccount",False)
+                canvas.after(1, internal_loop)
         # Schedule if no buttons were clicked
         else:
             canvas.after(100, internal_loop)
