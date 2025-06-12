@@ -12,7 +12,7 @@ import traceback
 # Ensure tkinter
 try: import tkinter as tk
 except:
-    os.system("python3 -m pip install tkinter")
+    os.system("python -m pip install tkinter")
 
 # Handle arguments
 ## Traceback: switches _traceback to true

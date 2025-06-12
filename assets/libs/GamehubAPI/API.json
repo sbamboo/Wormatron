@@ -9,5 +9,5 @@
         "ChangelogNote": "Added backupService-ping filtering for scoreboard data."
     },
     "License": "https://raw.githubusercontent.com/sbamboo/Gamehub/main/API/v2/tos.txt",
-    "Platform": "Crossplatform-PYTHON3"
+    "Platform": "Crossplatform-python"
 }

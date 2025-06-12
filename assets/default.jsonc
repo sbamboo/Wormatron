@@ -16,8 +16,8 @@
 		"skipStartVid":"True"
 	},
 	"Settings": {
-		"Scoreboard":"True", // Turn off to disable the scoreboard system, this will mean you have ONE offline save :)
-		"OfflineMode":"False", // Disables are network tries and uses localmode without showing offlineNotices, Note! Will still sync when online is turned-on
+		"Scoreboard":"False", // Turn off to disable the scoreboard system, this will mean you have ONE offline save :)
+		"OfflineMode":"True", // Disables are network tries and uses localmode without showing offlineNotices, Note! Will still sync when online is turned-on
 		"GamehubAPIConfFile":"%source%\\api.sconf", // The API config file
 		"BackgroundMusic": "True",
 		"LevelSelectSystem": "UI", // 'Fallback' or 'UI'

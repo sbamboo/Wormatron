@@ -10,6 +10,7 @@ import requests
 class netwa:
 	# Function to check for an internet connection
 	def has_connection(override_url=None):
+		return False
 		# If no url is given, default to google.
 		if override_url == None or override_url == "":
 			override_url = "https://google.com"

@@ -4,7 +4,7 @@ import os
 try:
     import pyaes
 except:
-    os.system("python3 -m pip install pyaes")
+    os.system("python -m pip install pyaes")
     import pyaes
 
 def encdec_b64(inputs,mode=str()):

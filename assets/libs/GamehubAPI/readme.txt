@@ -1,4 +1,4 @@
-With the current stage of the API, please run the api with the "Python3" command
+With the current stage of the API, please run the api with the "python" command
 
 Also some libraries has some dependencies
 

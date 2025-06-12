@@ -511,22 +511,22 @@ if __name__ == '__main__':
 
 # Examples of tempFile management
 ## Creation of tempPath:
-# $tempPath = python3 gamehubAPI.py --createTempDir
-# python3 gamehubAPI.py --deleteTempDir --tempFolder $tempPath
+# $tempPath = python gamehubAPI.py --createTempDir
+# python gamehubAPI.py --deleteTempDir --tempFolder $tempPath
 ## SecurityLevel 0:
-# python3 gamehubAPI.py --saveDict -tf_slvl 0 -tf_tempFolder $tempPath -tf_fileName "bob" -tf_jsonStr '{"bob":5}'
-# python3 gamehubAPI.py --loadDict -tf_slvl 0 -tf_tempFolder $tempPath -tf_fileName "bob"
+# python gamehubAPI.py --saveDict -tf_slvl 0 -tf_tempFolder $tempPath -tf_fileName "bob" -tf_jsonStr '{"bob":5}'
+# python gamehubAPI.py --loadDict -tf_slvl 0 -tf_tempFolder $tempPath -tf_fileName "bob"
 ## SecurityLevel 1:
-# $fileHash = python3 gamehubAPI.py --saveDict -tf_slvl 1 -tempFolder $tP -tf_fileName "bob" -tf_jsonStr '{"bob":10}' -tf_hashType "sha256"
-# python3 gamehubAPI.py --loadDict -tf_slvl 1 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_hashType "sha256" -tf_filehash $fileHash
+# $fileHash = python gamehubAPI.py --saveDict -tf_slvl 1 -tempFolder $tP -tf_fileName "bob" -tf_jsonStr '{"bob":10}' -tf_hashType "sha256"
+# python gamehubAPI.py --loadDict -tf_slvl 1 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_hashType "sha256" -tf_filehash $fileHash
 ## SecurityLevel 2:
-# python3 gamehubAPI.py --saveDict -tf_slvl 3 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_jsonStr '{"bob":10}' -tf_encType "aes" -tf_encKey "secret"
-# python3 gamehubAPI.py --loadDict -tf_slvl 3 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_encType "aes" -tf_encKey "secret"
+# python gamehubAPI.py --saveDict -tf_slvl 3 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_jsonStr '{"bob":10}' -tf_encType "aes" -tf_encKey "secret"
+# python gamehubAPI.py --loadDict -tf_slvl 3 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_encType "aes" -tf_encKey "secret"
 ## SecurityLevel 3:
-# $fileHash = python3 gamehubAPI.py --saveDict -slvl 3 -tempFolder $tempFolder -tf_fileName "bob" -tf_jsonStr '{"bob":10}' -tf_encType "aes" -tf_encKey "secret" -tf_hashType "sha256"
-# python3 gamehubAPI.py --loadDict -tf_slvl 3 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_encType "aes" -tf_encKey "secret" -tf_hashType "sha256" -tf_filehash $fileHash
+# $fileHash = python gamehubAPI.py --saveDict -slvl 3 -tempFolder $tempFolder -tf_fileName "bob" -tf_jsonStr '{"bob":10}' -tf_encType "aes" -tf_encKey "secret" -tf_hashType "sha256"
+# python gamehubAPI.py --loadDict -tf_slvl 3 -tf_tempFolder $tempFolder -tf_fileName "bob" -tf_encType "aes" -tf_encKey "secret" -tf_hashType "sha256" -tf_filehash $fileHash
 ## Cleaning up if a problem occurs:
-# python3 gamehubAPI.py --cleanFolder -tf_tempFolder $tempFolder
+# python gamehubAPI.py --cleanFolder -tf_tempFolder $tempFolder
 
 # Examples of managerAPI:
 ## Register/Unregister

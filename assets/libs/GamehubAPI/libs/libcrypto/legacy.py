@@ -4,7 +4,7 @@ import os
 try:
     from cryptography.fernet import Fernet
 except:
-    os.system("python3 -m pip install cryptography")
+    os.system("python -m pip install cryptography")
     from cryptography.fernet import Fernet
 
 def encdec(key, inputs=str(), mode=str()):

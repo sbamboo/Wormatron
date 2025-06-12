@@ -1,5 +1,5 @@
 # Setup
-$_internal_pyPath = "python3.exe"
+$_internal_pyPath = "python.exe"
 $_internal_gamehubAPI = "$PSScriptRoot\..\gamehubAPI.py"
 $_internal_quickuseAPI = "$PSScriptRoot\..\quickuseAPI.py"
 

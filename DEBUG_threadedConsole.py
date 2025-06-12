@@ -92,4 +92,4 @@ output_thread.start()
 
 # Start the main console
 import os
-os.system("python3 wormatron.py --debug")
+os.system("python wormatron.py --debug")

@@ -425,7 +425,7 @@ class filesys():
         # Local imports:
         try: import distro
         except:
-            os.system("python3 -m pip install distro")
+            os.system("python -m pip install distro")
             import distro
         # Launch manager
         if altConUtils.IsWindows(): os.system(f"explorer {path}")

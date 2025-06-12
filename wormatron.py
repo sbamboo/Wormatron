@@ -184,8 +184,8 @@ scenes = {
 csStore["pathtags"] = {"source":f"{GAME_PARENTPATH}{os.sep}assets"}
 
 # Load scoreboardOptions
-csStore["scoreboardEnabled"] = bool(csStore["game_Data"]["Settings"]["Scoreboard"])
-csStore["scoreboardOfflineMode"] = bool(csStore["game_Data"]["Settings"]["OfflineMode"])
+csStore["scoreboardEnabled"] = eval(csStore["game_Data"]["Settings"]["Scoreboard"])
+csStore["scoreboardOfflineMode"] = eval(csStore["game_Data"]["Settings"]["OfflineMode"])
 csStore["scoreboard_apiConf"] = pathtag(csStore["pathtags"],csStore["game_Data"]["Settings"]["GamehubAPIConfFile"])
 
 # Setup gamehub API connector

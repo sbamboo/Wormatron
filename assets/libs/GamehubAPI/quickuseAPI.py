@@ -276,7 +276,7 @@ def saveServiceFunction(apiConfPath=str(),linkedFile=str(),exitFile=str(),doEncr
                 if verbose: print(f"\033[33m[SaveService] \033[90mUpdated data for user '{user}'\033[0m")
                 
 # Functions to work with the saveService (Files should be saved with saveServicePrep() with encryption by default)
-def gamehub_saveService_on(pyPath="python3",apiConfPath=str(),linkedFile=str(),exitFile=str(),doEncrypt=True,verbose=True,simpleScore=False):
+def gamehub_saveService_on(pyPath="python",apiConfPath=str(),linkedFile=str(),exitFile=str(),doEncrypt=True,verbose=True,simpleScore=False):
     # General setup of enviroment
     if os.path.exists(exitFile): os.remove(exitFile)
     # Setup base command
@@ -556,7 +556,7 @@ if __name__ == '__main__':
         ans =  saveServicePrep(linkedFile=args.ss_linkedFile,doEncrypt=args.ss_doEncrypt,scoreboard=args.ss_scoreboard,user=args.ss_user,data=_jsonData)
         print(ans)
     if args.ss_on:
-        pyPath = "python3"
+        pyPath = "python"
         if args.ss_pyPath: pypath = args.ss_pyPath
         ans =  gamehub_saveService_on(ss_pyPath=pyPath,apiConfPath=args.ss_apiConfPath,linkedFile=args.ss_linkedFile,exitFile=args.ss_exitFile,doEncrypt=args.ss_doEncrypt,verbose=args.ss_verbose,simpleScore=args.ss_simpleScore)
         print(ans)
